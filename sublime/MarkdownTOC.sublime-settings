@@ -1,0 +1,7 @@
+{
+  "default_autolink": true,
+  "default_bracket": "round",
+  "default_depth": 2,
+  "default_autoanchor": false,
+  "default_style": "unordered"
+}

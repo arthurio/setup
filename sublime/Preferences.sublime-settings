@@ -1,0 +1,91 @@
+{
+	"bold_folder_labels": true,
+	"caret_style": "phase",
+	"close_windows_when_empty": false,
+	"default_font_size": 15,
+	"file_exclude_patterns":
+	[
+		"*.bundle.js",
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db",
+		"django.request.log",
+		".noseids"
+	],
+	"folder_exclude_patterns":
+	[
+		"client/public",
+		"client/.sass-cache",
+		"client/app/components",
+		"client/app/javascripts/lib",
+		"client/node_modules",
+		"client/app/javascripts/vendor",
+		"node_modules",
+		"bower_components",
+		".git"
+	],
+	"font_size": 15,
+	"highlight_line": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+	],
+	"remember_open_files": true,
+	"rulers":
+	[
+		80
+	],
+	"show_full_path": true,
+	"spell_check": true,
+	"tab_size": 4,
+	"todo":
+	{
+		"case_sensitive": true,
+		"file_exclude_patterns":
+		[
+			"*.css",
+			"*.scssc"
+		],
+		"folder_exclude_patterns":
+		[
+			"public",
+			"components",
+			"vendor",
+			"lib",
+			"core_ext",
+			"docs",
+			"logs",
+			"target",
+			"static",
+			"node_modules",
+			"chrome",
+			"pylibs",
+			".git"
+		],
+		"patterns":
+		{
+			"NOTE": "NOTE[\\(a-zA-Z\\)]{0,10}:+(?P<note>.*)$",
+			"TODO": "TODO[\\(a-zA-Z\\)]{0,10}:+(?P<todo>.*)$",
+			"XXX": "XXX[\\(a-zA-Z\\)]{0,10}:+(?P<xxx>.*)$"
+		}
+	},
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"vintage_start_in_command_mode": true,
+}

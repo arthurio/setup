@@ -1,0 +1,8 @@
+{
+    "pep8_max_line_length": 120,
+    "display_signatures": false,
+    "python_interpreter": "/usr/local/bin/python",
+    "pep8_ignore": [
+        "W503",
+    ]
+}

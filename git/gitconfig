@@ -1,0 +1,27 @@
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+    cr = checkout-recent
+    cm = commit -m
+	uncommit = reset --soft HEAD^
+	cb = rev-parse --abbrev-ref HEAD
+[color]
+	ui = auto
+[user]
+	name = Arthur Rio
+	email = arthur@minervaproject.com
+[github]
+	user = arthurio
+[apply]
+	whitespace = nowarn
+[push]
+	default = current
+[pull]
+	default = current
+	rebase = true
+[core]
+	editor = /usr/bin/vim
+[credential]
+	helper = osxkeychain

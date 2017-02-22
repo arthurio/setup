@@ -1,0 +1,26 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Babel",
+		"Better CoffeeScript",
+		"BetterFindBuffer",
+		"Coffee Color Scheme",
+		"Color Highlighter",
+		"Djaneiro",
+		"Gist",
+		"Git",
+		"GitGutter",
+		"JSON Reindent",
+		"Markdown Preview",
+		"MarkdownTOC",
+		"Maybs Quit",
+		"Package Control",
+		"SyncedSideBar",
+		"VintageLines"
+	]
+}
