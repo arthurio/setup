@@ -3,7 +3,6 @@ syntax on
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-" To install plugins, run :PluginInstall
 " Bundle 'Floobits/floobits-vim'  # deprecated for now, waiting on vim8
 Bundle 'JamshedVesuna/vim-markdown-preview'
 Bundle 'L9'
@@ -14,18 +13,25 @@ Bundle 'chaoren/vim-wordmotion'
 Bundle 'christoomey/vim-sort-motion'
 Bundle 'gmarik/Vundle.vim'
 Bundle 'gmarik/github-search.vim'
+Bundle 'gorkunov/smartpairs.vim'
+Bundle 'jasoncodes/ctrlp-modified.vim'
+Bundle 'joereynolds/place.vim'
 Bundle 'justinj/vim-react-snippets'
 Bundle 'kien/ctrlp.vim'
+Bundle 'machakann/vim-highlightedyank'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'mxw/vim-jsx'
+Bundle 'mzlogin/vim-markdown-toc'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
+Bundle 'ruanyl/vim-fixmyjs'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'vim-scripts/indentpython.vim'
 Bundle 'vim-scripts/mru.vim'
@@ -40,6 +46,7 @@ filetype plugin indent on
  "
  " see :h vundle for more details or wiki for FAQ
  " NOTE: comments after Bundle command are not allowed..
+ " Run :so $MYVIMRC before BundleInstall
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -104,10 +111,6 @@ if $TERM_PROGRAM =~ "iTerm"
     endif
 endif
 
-" Taken From http://stackoverflow.com/questions/235439/vim-80-column-layout-concerns
-autocmd FileType python highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-autocmd FileType python match OverLength /\%81v.\+/
-
 "--- search options ------------
 set incsearch       " show 'best match so far' as you type
 set hlsearch        " hilight the items found by the search
@@ -167,7 +170,7 @@ map <leader><space> :MRU<CR>
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|client-build\|bower_components\|log\|tmp$',
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|client-build\|bower_components\|\.log\|tmp$',
   \ 'file': '\.so$\|\.dat$\|\.DS_Store$\|\.pyc$\|\.(png|jpg|pdf|jpeg)$\|\.map$'
   \ }
 
@@ -204,6 +207,11 @@ set formatoptions-=t
 " Convert tab to spaces
 set expandtab
 
+" Default indentation
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+
 " PEP8 indentation
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -214,18 +222,24 @@ au BufNewFile,BufRead *.py
     \ set fileformat=unix
 
 " Other files indentation
-au BufNewFile,BufRead *.js,*.html,*.css,*.jsx,*.yml
+au BufNewFile,BufRead *.js,*.html,*.css,*.jsx
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4
+
+au BufNewFile,BufRead *.yml,*.md
     \ set tabstop=2 |
     \ set softtabstop=2 |
     \ set shiftwidth=2
 
+
 " Flagging unecessary Whitespace
 highlight BadWhitespace guibg=red ctermbg=darkred
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+au BufRead,BufNewFile *.html,*.js?,*.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 "remove trailing whitespace
 "http://vim.wikia.com/wiki/Remove_unwanted_spaces#Automatically_removing_all_trailing_whitespace
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre *.py,*.html,*.js? :%s/\s\+$//e
 
 
 " python with virtualenv support
@@ -273,8 +287,11 @@ vmap <leader>/ :Commentary<cr>
 " Map , + f to :Ag
 noremap <leader>f :Ag! 
 
-" Import pdb is ctr + p
+" Import pudb is ctr + p in insert mode
 inoremap <C-p> import pudb; pu.db<CR><Esc>
+
+" Add encoding line
+inoremap <C-c> # -*- coding: utf-8 -*-<CR><Esc>
 
 " Map goto definition function
 nnoremap <leader>g :YcmCompleter GoTo<CR>
@@ -315,3 +332,28 @@ inoremap # X#
 
 " Rename variable
 nnoremap <Leader>r :%s/\<<C-r><C-w>\>//g<Left><Left>
+
+" wordmotion override
+let g:wordmotion_mappings = {
+\ 'aw' : '',
+\ 'iw' : '',
+\ }
+
+" https://github.com/joereynolds/place.vim/
+nmap ga <Plug>(place-insert)
+nmap gm <Plug>(place-insert-multiple)
+
+" Time to highlight yanked text in millis
+let g:highlightedyank_highlight_duration = 150
+
+" Alternative for ctrlp to look only at files modified
+map <Leader>M :CtrlPModified<CR>
+map <Leader>m :CtrlPBranch<CR>
+
+" Maintain undo history between sessions
+set undofile
+set undodir=~/.vim/undodir
+
+" macvim settings
+"guifont	list of font names to be used in the GUI
+set gfn=Droid\ Sans\ Mono\ Awesome
