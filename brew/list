@@ -34,7 +34,8 @@ rename
 s3cmd
 sqlite
 tcptraceroute
-vim
+the_silver_searcher
+vim --with-python@2
 watch
 wget
 zsh

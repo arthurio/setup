@@ -42,3 +42,7 @@ gpg --import arthur.pub
 gpg --armor --export-secret-keys  arthur.rio@me.com > arthur.private
 gpg --import arthur.private
 ```
+
+## Fonts
+git clone git@github.com:gabrielelana/awesome-terminal-fonts.git
+
