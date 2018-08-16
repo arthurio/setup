@@ -31,3 +31,14 @@ brew unlink mysql
 brew install mysql-connector-c
 brew link --overwrite mysql
 ```
+
+## GPG
+
+### Export
+
+```
+gpg --armor --export arthur.rio@me.com > arthur.pub
+gpg --import arthur.pub
+gpg --armor --export-secret-keys  arthur.rio@me.com > arthur.private
+gpg --import arthur.private
+```

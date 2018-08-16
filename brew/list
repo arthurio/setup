@@ -11,6 +11,7 @@ freetype
 fzf
 git
 git-crypt
+gpg
 gti
 heroku
 heroku-toolbelt
