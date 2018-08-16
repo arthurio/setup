@@ -1,6 +1,7 @@
 xquartz
 alfred
 chromedriver
+cloudapp
 docker
 flux
 fontforge
@@ -8,7 +9,9 @@ google-chrome
 iterm2
 karabiner-elements
 macvim
+recordit
 sizeup
+skitch
 slack
 spotify
 the-unarchiver
