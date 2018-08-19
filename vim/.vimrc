@@ -21,13 +21,13 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'machakann/vim-highlightedyank'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'w0rp/ale'
 Bundle 'mxw/vim-jsx'
 Bundle 'mzlogin/vim-markdown-toc'
 Bundle 'pangloss/vim-javascript'
 Bundle 'rking/ag.vim'
 Bundle 'ruanyl/vim-fixmyjs'
 Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
 Bundle 'sjl/vitality.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -357,3 +357,12 @@ set undodir=~/.vim/undodir
 " macvim settings
 "guifont	list of font names to be used in the GUI
 set gfn=Droid\ Sans\ Mono\ Awesome
+
+" ALE linter options
+" Show error window
+let g:ale_open_list = 1
+" Key mappings to navigate errors
+nmap <silent> <Leader>n <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>p <Plug>(ale_next_wrap)
+" Show 5 lines of errors (default: 10)
+let g:ale_list_window_size = 5
