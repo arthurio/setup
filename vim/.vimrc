@@ -366,3 +366,7 @@ nmap <silent> <Leader>n <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>p <Plug>(ale_next_wrap)
 " Show 5 lines of errors (default: 10)
 let g:ale_list_window_size = 5
+
+" Always show the next matched string at the center of the screen
+nnoremap n nzz
+nnoremap N Nzz
