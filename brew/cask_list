@@ -1,5 +1,6 @@
 xquartz
 alfred
+appcleaner
 chromedriver
 cloudapp
 docker
@@ -9,6 +10,7 @@ google-chrome
 iterm2
 karabiner-elements
 macvim
+messenger
 recordit
 sizeup
 skitch
