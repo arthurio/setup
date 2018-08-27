@@ -1,4 +1,3 @@
-xquartz
 adobe-creative-cloud
 alfred
 appcleaner
@@ -6,6 +5,7 @@ calibre
 chromedriver
 cloudapp
 docker
+dropbox
 filezilla
 firefox
 flux
@@ -19,6 +19,7 @@ karabiner-elements
 macvim
 messenger
 movist
+private-internet-access
 recordit
 sizeup
 skitch
@@ -29,3 +30,4 @@ transmission
 vlc
 whatsapp
 wireshark
+xquartz

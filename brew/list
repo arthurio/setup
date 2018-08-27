@@ -12,6 +12,8 @@ fzf
 git
 git-crypt
 gpg
+graphviz
+grip
 gti
 heroku
 heroku-toolbelt
@@ -23,6 +25,7 @@ lcov
 macvim
 mycli
 mysql
+mysql-connector-c
 nmap
 nvm
 openssl
